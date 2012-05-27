@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="<c:url value="/css/common.css"/>" type="text/css" />
-<script type="text/javascript" src="<c:url value="/bin/jquery/jquery-1.7.1.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/bin/jquery/jquery-1.7.2.min.js"/>"></script>
 <script type="text/javascript">
 $(function() {
 	

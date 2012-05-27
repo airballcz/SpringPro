@@ -45,6 +45,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>com.uiui.test.domain.User</value>
+				<value>com.uiui.test.domain.Role</value>
 			</list>
 		</property>
 		<!-- 定义hibernate的sessionFactory属性 -->

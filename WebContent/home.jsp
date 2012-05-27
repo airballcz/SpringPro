@@ -11,7 +11,7 @@ body {
 }
 -->
 </style>
-<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/jquery-1.7.1.min.js"/>"></script>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/jquery-1.7.2.min.js"/>"></script>
 <script type="text/javascript">
 $(function() {
 	

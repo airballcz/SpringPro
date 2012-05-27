@@ -51,6 +51,12 @@ public class User {
 	 */
 	@Column
 	private String tellphone;
+	
+	/*
+	 * 电子邮件
+	 */
+	@Column
+	private String email;
 
 	public String getAccount() {
 		return account;
@@ -98,6 +104,14 @@ public class User {
 
 	public void setTellphone(String tellphone) {
 		this.tellphone = tellphone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

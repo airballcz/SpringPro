@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" href="<c:url value="/bin/jquery/development-bundle/themes/base/jquery.ui.all.css"/>" rel="stylesheet" />
 <style type="text/css">
 *{padding:0px;margin:0px;}
 * li{list-style:none;}
@@ -23,9 +24,33 @@ a:hover{text-decoration:underline;}
 
 .menu_nav_right{padding-right:8px;background:url(images/menu/nav_r_bg.gif) no-repeat right top;float:right;height:40px;}
 </style>
-<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/jquery-1.7.1.min.js"/>"></script>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/jquery-1.7.2.min.js"/>"></script>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/development-bundle/external/jquery.bgiframe-2.1.2.js"/>"></script>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/development-bundle/ui/jquery.ui.core.js"/>"></script>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/development-bundle/ui/jquery.ui.widget.js"/>"></script>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/development-bundle/ui/jquery.ui.mouse.js"/>"></script>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/development-bundle/ui/jquery.ui.draggable.js"/>"></script>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/development-bundle/ui/jquery.ui.position.js"/>"></script>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/development-bundle/ui/jquery.ui.resizable.js"/>"></script>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/development-bundle/ui/jquery.ui.dialog.js"/>"></script>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/development-bundle/ui/jquery.effects.core.js"/>"></script>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/development-bundle/ui/jquery.effects.blind.js"/>"></script>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/development-bundle/ui/jquery.effects.explode.js"/>"></script>
 <script type="text/javascript">
+$.fx.speeds._default = 1000;
 $(function() {
+	$('#dialog').dialog({
+		autoOpen: false,
+		show: 'blind',
+		hide: 'explode',
+		zIndex: 20000
+	});
+	
+	$('#about').click(function() {
+		$('#dialog').dialog('open').dialog('moveToTop');
+		return false;
+	});
+	
 	
 });
 </script>
@@ -38,12 +63,15 @@ $(function() {
 <div class="menu_nav">
 <ul class="nav_content">
 <li class="home"><a href="<c:url value="/home.jsp"/>" title="首页" target="home"><span>首页</span></a></li>
-<li><a href="#" title="系统管理"><span>系统管理</span></a></li>
-<li><a href="#" title="关于我们"><span>关于我们</span></a></li>
+<li><a href="<c:url value="/content.jsp" />" title="系统管理" target="home"><span>系统管理</span></a></li>
+<li><a href="#" id="about" title="关于我们"><span>关于我们</span></a></li>
 </ul>
 <div class="menu_nav_right"></div>
 
 </div>
+</div>
+<div id="dialog" title="关于我们">
+	<p>SSH权限管理系统，目标实现权限的基本管理，系统管理员可通过完全手动配置的方式完成系统的基础信息配置。系统用户可完成自身相关功能的设置。</p>
 </div>
 </body>
 </html>

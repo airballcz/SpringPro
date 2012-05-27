@@ -3,25 +3,42 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/jquery-1.7.1.min.js"/>"></script>
+<link type="text/css" href="<c:url value="/bin/jquery/development-bundle/themes/base/jquery.ui.all.css"/>" rel="stylesheet" />
+<style type="text/css">
+<!--
+ul {
+	list-style-type: none;
+	margin-left: -10px;
+}
+-->
+</style>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/jquery-1.7.2.min.js"/>"></script>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/development-bundle/ui/jquery.ui.core.js"/>"></script>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/development-bundle/ui/jquery.ui.widget.js"/>"></script>
+<script type="text/javascript" charset="utf-8" src="<c:url value="/bin/jquery/development-bundle/ui/jquery.ui.accordion.js"/>"></script>
 <script type="text/javascript">
 $(function() {
-	var url = '<c:url value="/system/user/list.do" />';
-	//tabs.tabs('add', url, '用户管理1', [2]);
-	
-	//$('#userlist').click(function() {
-		//alert(window.parent.top.frames['summary'].window);
-	//});
+	$('#accordion').accordion({
+		autoHeight: false,
+		navigation: true
+	});
 });
-
-function test() {
-	alert(window.parent.frames['summary'].window.addTab());
-}
 </script>
 <title>登录首页</title>
 </head>
 <body>
-系统菜单列表
-<a href="#" onclick="test()" id="userlist" target="summary">用户列表</a>
+<div id="accordion">
+<h3><a href="#">系统设置</a></h3>
+<div>
+<ul>
+<li><a href="<c:url value="/system/user/list.do" />" id="userlist" target="context">用户管理</a></li>
+<li><a href="<c:url value="/system/user/list.do" />" id="userlist" target="context">角色管理</a></li>
+</ul>
+</div>
+<h3><a href="#">基本配置</a></h3>
+<div>
+<li><a href="" target="context">数据字典</a></li>
+</div>
+</div>
 </body>
 </html>

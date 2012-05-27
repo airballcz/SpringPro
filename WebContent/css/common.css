@@ -13,6 +13,10 @@ iframe {
 	height: 100%;
 }
 
+table {
+	width: 100%;
+}
+
 table tr th {
 	height: 40px;
 	text-align: right;
@@ -20,6 +24,10 @@ table tr th {
 
 table caption {
 	height: 50px;
+}
+
+.tr_query {
+	text-align: right;
 }
 
 /*边框为1px表格样式*/
